@@ -17,7 +17,7 @@ fs.readdir('images', (err, files) => {
         fit: sharp.fit.contain,
         background: { r: 255, g: 255, b: 255, alpha: 1 }
       })
-      // Coloca a imagem da pasta "bigskins" na frente da imagem "fundo.png"
+      // Coloca a imagem da pasta "images" na frente da imagem "fundo.png"
       .composite([{ input: 'fundo.png', gravity: 'center' }, { input: 'images/' + file, gravity: 'center' }])
       // Salva a imagem editada na pasta "pront" com o mesmo nome do arquivo original
       .toFile('pront/' + file, (err, info) => {
